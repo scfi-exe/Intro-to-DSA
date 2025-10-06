@@ -45,8 +45,12 @@ print(removeEnd(myArray))
 def removeMiddle(arr, i, length):
     for index in range(i + 1, length):
         arr[index - 1] = arr[index]
-    arr.pop()
+    arr.pop()  # I added this line to comply with step 4
     return arr
 
 
 print(removeMiddle([1, 2, 3, 4, 5], 2, 5))
+
+
+# INSERTION - INSERTING AT THE END
+# IF
