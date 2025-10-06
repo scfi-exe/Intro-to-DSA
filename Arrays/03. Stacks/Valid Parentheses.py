@@ -27,19 +27,18 @@ def validParentheses(s: str) -> bool:
     return True if not stack else False
 
 
-class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        closeToOpen = {")": "(", "}": "{", "]": "["}
-        for i in range(len(s)):
-            if i in closeToOpen:
-                if stack and stack[-1] == closeToOpen[i]:
-                    stack.pop()
-                else:
-                    return False
+def isValid(self, s: str) -> bool:
+    stack = []
+    closeToOpen = {")": "(", "}": "{", "]": "["}
+    for i in stack:
+        if i in closeToOpen:
+            if stack and closeToOpen[-1] == i:
+                stack.pop()
             else:
-                stack.append(s[i])
-        return True if not stack else False
+                return False
+        else:
+            stack.append(i)
+    return True if not stack else False
 
 
 print(validParentheses("[({})]"))
